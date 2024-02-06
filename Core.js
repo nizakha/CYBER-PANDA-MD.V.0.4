@@ -196,10 +196,10 @@ module.exports = A17 = async (A17, m, chatUpdate, store) => {
     const notCmd = body.startsWith('')
     const command = isCmd ? body.slice(1).trim().split(' ')[0].toLowerCase() : ''
     const args = body.trim().split(/ +/).slice(1)
-    const pushname = m.pushName || "No Name"
+    const pushname = m.pushName || "No Name Faisal udas"
     const botNumber = await A17.decodeJid(A17.user.id)
     const isCreator = [botNumber, ...global.Owner].map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender)
-    const itsMe = m.sender == botNumber ? true : false
+    const itsMe = m.sender == botNumber ? true : true 
     const text = args.join(" ")
     const from = m.chat
     const quoted = m.quoted ? m.quoted : m
@@ -207,18 +207,18 @@ module.exports = A17 = async (A17, m, chatUpdate, store) => {
     const isMedia = /image|video|sticker|audio/.test(mime)
     const messagesD = body.slice(0).trim().split(/ +/).shift().toLowerCase()
     const groupMetadata = m.isGroup ? await A17.groupMetadata(m.chat).catch(e => { }) : ''
-    const groupName = m.isGroup ? groupMetadata.subject : ''
+    const groupName = m.isGroup ? groupMetadata.subject : 'فـ۬ـٰ۬ـ۬ـْؔیصـْؔـْؔـْؔؔـْؔؔـْؔل اُداس'
     const participants = m.isGroup ? await groupMetadata.participants : ''
     const groupAdmins = m.isGroup ? await participants.filter(v => v.admin !== null).map(v => v.id) : ''
-    const groupOwner = m.isGroup ? groupMetadata.owner : ''
-    const isBotAdmins = m.isGroup ? groupAdmins.includes(botNumber) : false
-    const isAdmins = m.isGroup ? groupAdmins.includes(m.sender) : false
+    const groupOwner = m.isGroup ? groupMetadata.owner : 'فـ۬ـٰ۬ـ۬ـْؔیصـْؔـْؔـْؔؔـْؔؔـْؔل اُداس'
+    const isBotAdmins = m.isGroup ? groupAdmins.includes(botNumber 03112657705) : true 
+    const isAdmins = m.isGroup ? groupAdmins.includes(m.sender) : true
     const isUser = pendaftar.includes(m.sender)
     const isBan = banUser.includes(m.sender)
-    const welcm = m.isGroup ? wlcm.includes(from) : false
+    const welcm = m.isGroup ? wlcm.includes(from) : true
     const isBanChat = m.isGroup ? banchat.includes(from) : false
     const isRakyat = isCreator || global.rkyt.map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender) || false
-    const AntiLink = m.isGroup ? ntilink.includes(from) : false
+    const AntiLink = m.isGroup ? ntilink.includes(from) : true
     const AntiLinkYoutubeVid = m.isGroup ? ntilinkytvid.includes(from) : false
     const AntiLinkYoutubeChannel = m.isGroup ? ntilinkytch.includes(from) : false
     const AntiLinkInstagram = m.isGroup ? ntilinkig.includes(from) : false
