@@ -74,7 +74,7 @@ global.rkyt = []
 global.wlcm = []
 global.gcrevoke = []
 global.autorep = []
-global.ntilink = []
+global.ntilink = [true]
 
 
 //
