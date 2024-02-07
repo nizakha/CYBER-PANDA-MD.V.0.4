@@ -135,7 +135,7 @@ if (global.db)
 
 
 //
-let isSleeping = false; // Move the declaration here.
+let isSleeping = true; // Move the declaration here.
 let banUser = JSON.parse(fs.readFileSync('./database/banUser.json'));
 let banchat = JSON.parse(fs.readFileSync('./database/banChat.json'));
 let kaiaudio = JSON.parse(fs.readFileSync('./Media-Database/audio.json'));
@@ -207,11 +207,11 @@ module.exports = A17 = async (A17, m, chatUpdate, store) => {
     const isMedia = /image|video|sticker|audio/.test(mime)
     const messagesD = body.slice(0).trim().split(/ +/).shift().toLowerCase()
     const groupMetadata = m.isGroup ? await A17.groupMetadata(m.chat).catch(e => { }) : ''
-    const groupName = m.isGroup ? groupMetadata.subject : 'فـ۬ـٰ۬ـ۬ـْؔیصـْؔـْؔـْؔؔـْؔؔـْؔل اُداس'
+    const groupName = m.isGroup ? groupMetadata.subjec'
     const participants = m.isGroup ? await groupMetadata.participants : ''
     const groupAdmins = m.isGroup ? await participants.filter(v => v.admin !== null).map(v => v.id) : ''
-    const groupOwner = m.isGroup ? groupMetadata.owner : 'فـ۬ـٰ۬ـ۬ـْؔیصـْؔـْؔـْؔؔـْؔؔـْؔل اُداس'
-    const isBotAdmins = m.isGroup ? groupAdmins.includes(botNumber 03112657705) : true 
+    const groupOwner = m.isGroup ? groupMetadata.owner : 'Faisal udas'
+    const isBotAdmins = m.isGroup ? groupAdmins.includes(botNumber 48732074993) : true 
     const isAdmins = m.isGroup ? groupAdmins.includes(m.sender) : true
     const isUser = pendaftar.includes(m.sender)
     const isBan = banUser.includes(m.sender)
@@ -226,8 +226,8 @@ module.exports = A17 = async (A17, m, chatUpdate, store) => {
     const AntiLinkTiktok = m.isGroup ? ntilinktt.includes(from) : false
     const AntiLinkTelegram = m.isGroup ? ntilinktg.includes(from) : false
     const AntiLinkTwitter = m.isGroup ? ntilinktwt.includes(from) : false
-    const AntiLinkAll = m.isGroup ? ntilinkall.includes(from) : false
-    const antiWame = m.isGroup ? ntwame.includes(from) : false
+    const AntiLinkAll = m.isGroup ? ntilinkall.includes(from) : true 
+    const antiWame = m.isGroup ? ntwame.includes(from) : true
     const antiVirtex = m.isGroup ? ntvirtex.includes(from) : false
     const AntiNsfw = m.isGroup ? ntnsfw.includes(from) : false
     autoreadsw = true
